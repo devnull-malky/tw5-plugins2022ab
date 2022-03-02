@@ -1,0 +1,1 @@
+tiddlywiki --server 8674 $:/core/save/all text/plain text/html 1 2 0.0.0.0

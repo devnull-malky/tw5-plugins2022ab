@@ -1,7 +1,9 @@
 {
 	"description": "TiddlyWiki Plugin Library",
 	"plugins": [
-		"tiddlywiki/pluginlibrary"
+		"tiddlywiki/pluginlibrary",
+		"tiddlywiki/filesystem",
+		"tiddlywiki/tiddlyweb"
 	],
 	"themes": [
                 "tiddlywiki/vanilla",
