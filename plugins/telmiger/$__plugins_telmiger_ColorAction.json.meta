@@ -1,0 +1,12 @@
+author: Thomas Elmiger
+core-version: 5.1.14
+created: 20180104214039944
+description: Color Manipulation Macro based on TinyColor
+list: readme usage colors support licence
+modified: 20200607200005890
+name: ColorAction
+plugin-type: plugin
+source: https://tid.li/tw5/plugins.html
+title: $:/plugins/telmiger/ColorAction
+type: application/json
+version: 0.1.2

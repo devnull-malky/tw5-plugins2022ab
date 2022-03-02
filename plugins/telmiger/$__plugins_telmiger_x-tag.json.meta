@@ -1,0 +1,12 @@
+author: Thomas Elmiger
+core-version: >=5.1.18
+created: 20190105160235991
+description: x-tag Tags with Superpowers
+list: readme
+modified: 20190107231427387
+name: x-tag
+plugin-type: plugin
+source: https://tid.li/tw5/tdn.html
+title: $:/plugins/telmiger/x-tag
+type: application/json
+version: 0.1.3

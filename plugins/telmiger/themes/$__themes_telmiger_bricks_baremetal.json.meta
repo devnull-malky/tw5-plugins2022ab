@@ -1,0 +1,12 @@
+author: Thomas Elmiger
+core-version: >=5.0.0
+created: 20200501114138824
+dependents: 
+description: Does absolutely nothing
+modified: 20200524230700832
+name: Bricks Bare Metal
+plugin-type: theme
+tags: 
+title: $:/themes/telmiger/bricks/baremetal
+type: application/json
+version: 5.1.22

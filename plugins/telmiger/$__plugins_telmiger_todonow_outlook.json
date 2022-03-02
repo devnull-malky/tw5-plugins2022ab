@@ -1,0 +1,59 @@
+{
+    "tiddlers": {
+        "$:/plugins/telmiger/todonow/outlook.css": {
+            "text": "/* Outolook on tasks for today, tomorrow and the next week */\n\n.todo-outlook {\n    background-color: #ffc;\n    padding-bottom: 1em;\n    border-radius: .25em;\n    border: 1px solid gray;\n    padding: 0.25rem 1em 1em 1em;\n    margin-bottom: 0.66em;\n}\n\n.todo-outlook h2 {\n    margin-left: 0.4em;\n}\n\n.tc-tiddler-body .todo-outlook h3 {\n    margin-top: 1rem;\n}\n\n.todo-outlook ul {\n    background-color: #eee;\n}\n\n.todo-outlook .todo-empty {\n    padding-left: 0.66em;\n}\n\n/* Printing */\n\n@media print {\n   .outlook-controls {\n      display: none;\n   }\n}",
+            "type": "text/vnd.tiddlywiki",
+            "title": "$:/plugins/telmiger/todonow/outlook.css",
+            "tags": "[[ToDo Addons]] $:/tags/Stylesheet",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180205222933249",
+            "creator": "Thomas Elmiger",
+            "created": "20170711221850244"
+        },
+        "$:/plugins/telmiger/todonow/outlook/controls": {
+            "text": "<small class=\"todo-right outlook-controls\">\n<$reveal type=\"nomatch\" state=\"$:/state/todotoday\" text=\"show\">\n<$button set=\"$:/state/todotoday\" setTo=\"show\" class=\"tc-btn-invisible tc-tiddlylink\"><<telang \"Today\">></$button>\n</$reveal>\n<$reveal type=\"match\" state=\"$:/state/todotoday\" text=\"show\">\n<$button set=\"$:/state/todotoday\" setTo=\"hide\" class=\"tc-btn-invisible tc-tiddlylink\"><<telang \"Close\">> <<telang \"Today\">></$button>\n</$reveal>\n – \n<$reveal type=\"nomatch\" state=\"$:/state/todotomorrow\" text=\"show\">\n<$button set=\"$:/state/todotomorrow\" setTo=\"show\" class=\"tc-btn-invisible tc-tiddlylink\"><<telang \"Tomorrow\">></$button>\n</$reveal>\n<$reveal type=\"match\" state=\"$:/state/todotomorrow\" text=\"show\">\n<$button set=\"$:/state/todotomorrow\" setTo=\"hide\" class=\"tc-btn-invisible tc-tiddlylink\"><<telang \"Close\">> <<telang \"Tomorrow\">></$button>\n</$reveal>\n – \n<$reveal type=\"nomatch\" state=\"$:/state/todothisweek\" text=\"show\">\n<$button set=\"$:/state/todothisweek\" setTo=\"show\" class=\"tc-btn-invisible tc-tiddlylink\"><<telang \"This-week\">></$button>\n</$reveal>\n<$reveal type=\"match\" state=\"$:/state/todothisweek\" text=\"show\">\n<$button set=\"$:/state/todothisweek\" setTo=\"hide\" class=\"tc-btn-invisible tc-tiddlylink\"><<telang \"Close\">> <<telang \"This-week\">></$button>\n</$reveal>\n</small>",
+            "title": "$:/plugins/telmiger/todonow/outlook/controls",
+            "tags": "[[ToDo Addons]]",
+            "modifier": "Thomas Elmiger",
+            "modified": "20170712214718186",
+            "creator": "Thomas Elmiger",
+            "created": "20170711095822373"
+        },
+        "$:/plugins/telmiger/todonow/outlook/display": {
+            "text": "<$reveal type=\"match\" state=\"$:/state/todotoday\" text=\"show\">\n<section class=\"todo-outlook\">\n\n{{$:/plugins/telmiger/todonow/outlook/ToDoToday}}\n\n</section>\n</$reveal>\n<$reveal type=\"match\" state=\"$:/state/todotomorrow\" text=\"show\">\n<section class=\"todo-outlook\">\n\n{{$:/plugins/telmiger/todonow/outlook/ToDoTomorrow}}\n\n</section>\n</$reveal>\n<$reveal type=\"match\" state=\"$:/state/todothisweek\" text=\"show\">\n<section class=\"todo-outlook\">\n\n{{$:/plugins/telmiger/todonow/outlook/ToDoThisWeek}}\n\n</section>\n</$reveal>",
+            "title": "$:/plugins/telmiger/todonow/outlook/display",
+            "tags": "[[ToDo Addons]]",
+            "modifier": "Thomas Elmiger",
+            "modified": "20170711100148023",
+            "creator": "Thomas Elmiger",
+            "created": "20170711100050962"
+        },
+        "$:/plugins/telmiger/todonow/outlook/ToDoThisWeek": {
+            "text": "!!! <<telang \"This-week\">>\n\n<$set name=\"listfilter\" value=\"\"\"[all[]tag[ToDo]][all[]tag[ToDoNow]] +[days:todo-deadline[7]sort[todo-deadline]]\"\"\">\n\n<ul class=\"te-list\">\n<$list filter=<<listfilter>> emptyMessage=\"<li class='todo-empty'><<telang 'Relax-Nothing-to-do'>></li>\">\n   <<todonowShowListItem>>\n</$list>\n</ul>\n\n</$set>\n",
+            "title": "$:/plugins/telmiger/todonow/outlook/ToDoThisWeek",
+            "tags": "[[ToDo Addons]]",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180205221936560",
+            "creator": "Thomas Elmiger",
+            "created": "20170625193036491"
+        },
+        "$:/plugins/telmiger/todonow/outlook/ToDoToday": {
+            "text": "!!! <<telang Today>>\n\n<$set name=\"listfilter\" value=\"\"\"[all[]tag[ToDoNow]][all[]tag[ToDo]] +[days:todo-deadline[0]sort[todo-deadline]]\"\"\">\n\n<ul class=\"te-list\">\n<$list filter=<<listfilter>> emptyMessage=\"<li class='todo-empty'><<telang 'Relax-Nothing-to-do'>></li>\">\n   <<todonowShowListItem>>\n</$list>\n</ul>\n\n</$set>\n",
+            "title": "$:/plugins/telmiger/todonow/outlook/ToDoToday",
+            "tags": "[[ToDo Addons]]",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180205222000220",
+            "creator": "Thomas Elmiger",
+            "created": "20170625190912687"
+        },
+        "$:/plugins/telmiger/todonow/outlook/ToDoTomorrow": {
+            "text": "!!! <<telang Tomorrow>>\n\n<$set name=\"listfilter\" value=\"\"\"[all[]tag[ToDoNow]][all[]tag[ToDo]] +[days:todo-deadline[1]!days:todo-deadline[1]] +[sort[todo-deadline]]\"\"\">\n\n<ul class=\"te-list\">\n<$list filter=<<listfilter>> emptyMessage=\"<li class='todo-empty'><<telang 'Relax-Nothing-to-do'>></li>\">\n   <<todonowShowListItem>>\n</$list>\n</ul>\n\n</$set>\n",
+            "title": "$:/plugins/telmiger/todonow/outlook/ToDoTomorrow",
+            "tags": "[[ToDo Addons]]",
+            "modifier": "Thomas Elmiger",
+            "modified": "20180205222015986",
+            "creator": "Thomas Elmiger",
+            "created": "20170625200429837"
+        }
+    }
+}

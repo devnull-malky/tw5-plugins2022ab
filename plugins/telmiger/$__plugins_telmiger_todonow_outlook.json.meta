@@ -1,0 +1,12 @@
+author: Thomas Elmiger
+core-version: >=5.1.14
+created: 20170714203044179
+dependents: ToDoNow
+description: ToDoNow Outlook Addon
+modified: 20170714203513195
+name: Outlook
+plugin-type: plugin
+source: https://tid.li/tw5/tdn.html
+title: $:/plugins/telmiger/todonow/outlook
+type: application/json
+version: 0.1.2
